@@ -1,4 +1,4 @@
-package com.example.a512lasalleapp.utils
+package com.example.a512lasalleapp.ui.utils
 
 sealed class Screens(val route : String) {
     data object Home : Screens("home")

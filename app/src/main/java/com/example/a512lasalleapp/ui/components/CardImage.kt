@@ -14,7 +14,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.a512lasalleapp.R
 import com.example.a512lasalleapp.models.News
-import com.example.a512lasalleapp.utils.newsList
+import com.example.a512lasalleapp.ui.utils.newsList
 
 @Composable
 fun CardImage(news: News, onClick : (News)->Unit){

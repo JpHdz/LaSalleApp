@@ -44,6 +44,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import com.example.a512lasalleapp.R
+import com.example.a512lasalleapp.models.Student
 import com.example.a512lasalleapp.ui.components.CardImage
 import com.example.a512lasalleapp.ui.components.Widget
 import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
@@ -53,9 +54,10 @@ import com.example.a512lasalleapp.ui.utils.Task
 import com.example.a512lasalleapp.ui.utils.Screens
 import com.example.a512lasalleapp.ui.utils.communities
 import com.example.a512lasalleapp.ui.utils.newsList
+import com.example.a512lasalleapp.ui.utils.studentsList
 
 @Composable
-fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
+fun HomeScreen(innerPadding: PaddingValues, navController: NavController,student:Student) {
 
     Column(
         modifier = Modifier
@@ -113,7 +115,7 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
                         fontSize = 18.sp
                     )
                     Text(
-                        text = "Juan Frausto",
+                        text = student.fullName,
                         color = Color.White,
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
@@ -221,6 +223,6 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController) {
 fun HomeScreenPreview() {
     val navController = rememberNavController()
     _512LaSalleAppTheme {
-        HomeScreen(innerPadding = PaddingValues(0.dp), navController = navController)
+        HomeScreen(innerPadding = PaddingValues(0.dp), navController = navController, student = studentsList[0])
     }
 }

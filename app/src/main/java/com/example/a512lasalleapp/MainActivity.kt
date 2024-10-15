@@ -36,6 +36,7 @@ import com.example.a512lasalleapp.ui.screens.SettingsScreen
 import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
 import com.example.a512lasalleapp.ui.utils.Screens
 import com.example.a512lasalleapp.ui.utils.bottomNavBarItems
+import com.example.a512lasalleapp.ui.utils.studentsList
 import com.exyte.animatednavbar.AnimatedNavigationBar
 import com.exyte.animatednavbar.animation.indendshape.shapeCornerRadius
 
@@ -102,16 +103,16 @@ class MainActivity : ComponentActivity() {
                 ) { innerPadding ->
                     NavHost(navController = navController, startDestination = Screens.Home.route) {
                         composable(route = Screens.Home.route) {
-                            HomeScreen(innerPadding = innerPadding, navController = navController)
+                            HomeScreen(innerPadding = innerPadding, navController = navController, student = studentsList[0])
                         }
                         composable(route = Screens.Calendar.route){
                             CalendarScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.Grades.route){
-                            GradesScreen(innerPadding = innerPadding)
+                            GradesScreen(innerPadding = innerPadding, student = studentsList[0])
                         }
                         composable(route = Screens.Settings.route) {
-                            SettingsScreen(innerPadding = innerPadding)
+                            SettingsScreen(innerPadding = innerPadding, navController= navController, student = studentsList[0])
                         }
                         composable(
                             route = Screens.NewsDetail.route+"/{id}",

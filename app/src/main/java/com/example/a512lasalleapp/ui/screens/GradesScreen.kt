@@ -7,10 +7,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.example.a512lasalleapp.models.Student
 import com.example.a512lasalleapp.ui.components.ScreenTemplate
 
 @Composable
-fun GradesScreen(innerPadding: PaddingValues) {
+fun GradesScreen(innerPadding: PaddingValues,student: Student) {
     ScreenTemplate(innerPadding = innerPadding, header = {
         Text(text = "Hola")
     }, body = {

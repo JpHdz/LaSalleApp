@@ -91,7 +91,6 @@ val studentsList = listOf(
         fullName = "Arthur William",
         birthdate = "12/10/1890",
         email = "mrarthurwilliam@wester.com",
-        photo = "https://i.pinimg.com/736x/eb/80/f9/eb80f9fb60934498a7f84c79cbcd5e39.jpg",
         carrer = careerList[0],
         semester = 6,
         subjects = subjectsList,

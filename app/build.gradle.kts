@@ -69,4 +69,6 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.animated.navigation.bar)
+    implementation("io.coil-kt:coil-compose:2.0.0")
+
 }

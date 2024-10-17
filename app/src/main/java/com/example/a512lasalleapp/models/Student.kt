@@ -5,7 +5,6 @@ data class Student (
     val fullName: String,
     val birthdate: String,
     val email : String,
-    val photo: String,
     val semester: Int,
     val carrer: Career,
     val subjects: List<Subject>,

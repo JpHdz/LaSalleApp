@@ -29,6 +29,9 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.a512lasalleapp.ui.screens.CalendarScreen
+import com.example.a512lasalleapp.ui.screens.ChangePasswordScreen
+import com.example.a512lasalleapp.ui.screens.ChangeThemeScreen
+import com.example.a512lasalleapp.ui.screens.GradeSubjectScreen
 import com.example.a512lasalleapp.ui.screens.GradesScreen
 import com.example.a512lasalleapp.ui.screens.HomeScreen
 import com.example.a512lasalleapp.ui.screens.NewsDetailScreen
@@ -53,7 +56,9 @@ class MainActivity : ComponentActivity() {
                 Screens.Home.route,
                 Screens.Grades.route,
                 Screens.Settings.route,
-                Screens.Calendar.route
+                Screens.Calendar.route,
+                Screens.ChangePassword.route,
+                Screens.ChangeTheme.route
             )
             _512LaSalleAppTheme {
                 val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
@@ -109,10 +114,16 @@ class MainActivity : ComponentActivity() {
                             CalendarScreen(innerPadding = innerPadding)
                         }
                         composable(route = Screens.Grades.route){
-                            GradesScreen(innerPadding = innerPadding, student = studentsList[0])
+                            GradesScreen(innerPadding = innerPadding, student = studentsList[0] , navController = navController)
                         }
                         composable(route = Screens.Settings.route) {
                             SettingsScreen(innerPadding = innerPadding, navController= navController, student = studentsList[0])
+                        }
+                        composable(route = Screens.ChangePassword.route) {
+                            ChangePasswordScreen(innerPadding = innerPadding, navController= navController, student = studentsList[0])
+                        }
+                        composable(route = Screens.ChangeTheme.route) {
+                            ChangeThemeScreen(innerPadding = innerPadding, navController= navController, student = studentsList[0])
                         }
                         composable(
                             route = Screens.NewsDetail.route+"/{id}",
@@ -125,6 +136,18 @@ class MainActivity : ComponentActivity() {
                         ) {
                             val id = it.arguments?.getInt("id",0) ?: 0
                             NewsDetailScreen(newsId=id,innerPadding = innerPadding)
+                        }
+                        composable(
+                            route = Screens.GradeSubject.route+"/{id}",
+                            arguments = listOf(
+                                navArgument("id"){
+                                    type = NavType.IntType
+                                    nullable = false
+                                }
+                            )
+                        ) {
+                            val id = it.arguments?.getInt("id",0) ?: 0
+                            GradeSubjectScreen(subjectId=id,innerPadding = innerPadding)
                         }
                     }
 

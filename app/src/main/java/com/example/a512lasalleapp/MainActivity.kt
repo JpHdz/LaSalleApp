@@ -35,6 +35,7 @@ import com.example.a512lasalleapp.ui.screens.GradeSubjectScreen
 import com.example.a512lasalleapp.ui.screens.GradesScreen
 import com.example.a512lasalleapp.ui.screens.HomeScreen
 import com.example.a512lasalleapp.ui.screens.NewsDetailScreen
+import com.example.a512lasalleapp.ui.screens.PaymentsScreen
 import com.example.a512lasalleapp.ui.screens.SettingsScreen
 import com.example.a512lasalleapp.ui.theme._512LaSalleAppTheme
 import com.example.a512lasalleapp.ui.utils.Screens
@@ -124,6 +125,9 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = Screens.ChangeTheme.route) {
                             ChangeThemeScreen(innerPadding = innerPadding, navController= navController, student = studentsList[0])
+                        }
+                        composable(route = Screens.Payments.route) {
+                            PaymentsScreen(innerPadding = innerPadding, navController= navController, student = studentsList[0])
                         }
                         composable(
                             route = Screens.NewsDetail.route+"/{id}",

@@ -48,6 +48,13 @@ fun GradeSubjectScreen(subjectId:Int,innerPadding : PaddingValues) {
             color = Color.White,
             modifier = Modifier.padding(start = 16.dp, bottom = 16.dp)
         )
+        Text(
+            text = "Id de materia:${subject.id}",
+            fontSize = 12.sp,
+            color = Color.White,
+            modifier = Modifier.padding(start = 16.dp, bottom = 16.dp)
+
+        )
         }
 //     Lista de calificaciones desglozadas
         Row(
@@ -114,6 +121,7 @@ fun GradeSubjectScreen(subjectId:Int,innerPadding : PaddingValues) {
                 fontWeight = FontWeight.Bold,
                 fontSize = 18.sp
             )
+
 
         }
     }

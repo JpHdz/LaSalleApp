@@ -152,9 +152,9 @@ fun HomeScreen(innerPadding: PaddingValues, navController: NavController,student
                 horizontalArrangement = Arrangement.SpaceAround
             ) {
                 // Widget
-                Widget(icon = Icons.Default.DateRange, text = "Sin eventos")
-                Widget(icon = Task, text = "2 tareas")
-                Widget(icon = Cash, text = stringResource(id = R.string.cash_text))
+                Widget(icon = Icons.Default.DateRange, text = "Sin eventos", navController = navController)
+                Widget(icon = Task, text = "2 tareas", navController = navController)
+                Widget(icon = Cash, text = stringResource(id = R.string.cash_text), navController = navController)
             }
         }
 

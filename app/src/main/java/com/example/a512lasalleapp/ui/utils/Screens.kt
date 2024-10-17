@@ -9,4 +9,5 @@ sealed class Screens(val route : String) {
     data object ChangePassword: Screens("change-password")
     data object ChangeTheme: Screens("change-theme")
     data object GradeSubject : Screens("grade-subject")
+    data object Payments: Screens("payments")
 }

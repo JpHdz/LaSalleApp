@@ -76,7 +76,7 @@ fun SubjectItem(subject: Subject, onClick: () -> Unit) {
         Text(
             text = "${String.format("%.1f", subject.finalGrade)}",
             style = MaterialTheme.typography.bodyLarge,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
         )
     }
     Spacer(modifier = Modifier.height(4.dp))

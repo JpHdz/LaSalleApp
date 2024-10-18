@@ -31,7 +31,9 @@ import com.example.a512lasalleapp.ui.utils.Screens
 fun Widget(icon : ImageVector, text: String, navController: NavController){
     Card(
         onClick = {
-            navController.navigate(Screens.Payments.route)
+            if(text == "Pagos") {
+                navController.navigate(Screens.Payments.route)
+            }
         }
     ){
 
